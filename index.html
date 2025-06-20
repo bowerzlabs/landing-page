@@ -27,7 +27,7 @@
     <div class="flex justify-center space-x-4 text-gray-400">
       <a href="#" id="x" aria-label="Twitter" class="hover:text-white" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M24 4.557a9.93 9.93 0 0 1-2.828.775A4.932 4.932 0 0 0 23.337 3c-.951.564-2.005.974-3.127 1.195a4.92 4.92 0 0 0-8.385 4.482A13.978 13.978 0 0 1 1.671 3.15a4.902 4.902 0 0 0 1.524 6.547A4.902 4.902 0 0 1 .96 9.1v.062a4.926 4.926 0 0 0 3.946 4.827 4.935 4.935 0 0 1-2.212.085 4.928 4.928 0 0 0 4.6 3.419A9.868 9.868 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.056 0 14.009-7.496 14.009-13.986 0-.21-.004-.423-.014-.634A9.936 9.936 0 0 0 24 4.557z"/></svg></a>
       <a href="#" id="github" aria-label="GitHub" class="hover:text-white" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.29 3.438 9.77 8.207 11.36.6.11.793-.26.793-.577v-2.256c-3.338.725-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.756-1.333-1.756-1.089-.745.082-.729.082-.729 1.204.085 1.837 1.237 1.837 1.237 1.07 1.835 2.809 1.305 3.495.997.108-.775.418-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.932 0-1.31.468-2.38 1.236-3.22-.124-.302-.535-1.52.117-3.165 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.296-1.23 3.296-1.23.653 1.645.243 2.863.12 3.165.77.84 1.236 1.91 1.236 3.22 0 4.61-2.803 5.63-5.475 5.922.43.37.815 1.1.815 2.22v3.293c0 .32.192.694.8.577C20.565 22.27 24 17.79 24 12.5 24 5.87 18.63.5 12 .5z"/></svg></a>
-      <a href="https://www.linkedin.com/company/105425129/" id="linkedin" target="_blank" aria-label="LinkedIn" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zm.02 4.49h-.02C4.34 8 3.67 8.667 3.67 9.5V20.5c0 .83.67 1.5 1.5 1.5h.02c.83 0 1.5-.67 1.5-1.5V9.5c0-.83-.67-1.5-1.5-1.5zM9 9.5v11H12v-6c0-1.105.895-2 2-2s2 .895 2 2v6h3v-6c0-2.757-2.243-5-5-5-1.306 0-2.418.52-3.293 1.367C9.574 11.134 9 12.269 9 13.5v-4z"/></svg></a>
+      <a href="#" id="linkedin" target="_blank" aria-label="LinkedIn" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zm.02 4.49h-.02C4.34 8 3.67 8.667 3.67 9.5V20.5c0 .83.67 1.5 1.5 1.5h.02c.83 0 1.5-.67 1.5-1.5V9.5c0-.83-.67-1.5-1.5-1.5zM9 9.5v11H12v-6c0-1.105.895-2 2-2s2 .895 2 2v6h3v-6c0-2.757-2.243-5-5-5-1.306 0-2.418.52-3.293 1.367C9.574 11.134 9 12.269 9 13.5v-4z"/></svg></a>
     </div>
   </div>
 
@@ -42,9 +42,9 @@
       description: "We're working hard to launch our amazing website. Stay connected!",
       launchDate: "2025-12-31T00:00:00", // YYYY-MM-DDTHH:MM:SS
       socials: {
-         x: "yourx",
-         linkedIn: "yourlinkedin",
-         github: "yourgithub"
+          x: "https://twitter.com/yourx",
+          linkedIn: "https://linkedin.com/in/yourlinkedin",
+          github: "https://github.com/yourgithub"
       }
     };
 
@@ -52,6 +52,11 @@
     document.getElementById("footer-name").innerText = config.name;
     document.getElementById("site-description").innerText = config.description;
     document.getElementById("page-title").innerText = config.name + " - Coming Soon";
+    // Update social links
+    document.getElementById("x").href = config.socials.x;
+    document.getElementById("github").href = config.socials.github;
+    document.getElementById("linkedin").href = config.socials.linkedIn;
+
 
     const launchDate = new Date(config.launchDate).getTime();
 
